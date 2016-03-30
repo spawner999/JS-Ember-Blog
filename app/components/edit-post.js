@@ -13,7 +13,6 @@ export default Ember.Component.extend({
         user: this.get('user'),
         text: this.get('text'),
       };
-      console.log(params);
       this.sendAction('edit', currentPost, params);
     }
   }
