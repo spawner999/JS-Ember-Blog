@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   models(params) {
-    return this.store.findRecord('rental', params.post_id);
+    return this.store.findRecord('post', params.post_id);
   },
   actions: {
     editPost(currentPost, params){
@@ -12,6 +12,15 @@ export default Ember.Route.extend({
         }
       });
       currentPost.save();
+      this.transitionTo('post');
+    },
+    addComment(params){
+      var newComment = this.store.createRecord('comment', params);
+      var currentPost = params.post;
+      currentPost.get('comments').addObject(newComment);
+      newComment.save().then(function(){
+        return currentPost.save();
+      });
       this.transitionTo('post');
     }
   }

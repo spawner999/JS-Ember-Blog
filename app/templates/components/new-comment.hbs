@@ -1,0 +1,11 @@
+{{#if showForm}}
+  <form class="newPost">
+    <label for="user">Your Name</label>
+    {{input type="text" value=user}}
+    <label for="text">Message</label>
+    {{textarea value=message}}
+  </form>
+  <button type="button" {{action 'sendComment'}}>Submit!</button>
+{{else}}
+  <button type="button" {{action 'toggleForm'}}>Comment</button>
+{{/if}}

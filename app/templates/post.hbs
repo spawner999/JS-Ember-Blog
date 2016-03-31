@@ -1,5 +1,7 @@
 <h2>{{model.title}}</h2>
 <h3>by: {{model.user}}</h3>
+<img src="{{model.image}}" alt="" />
 <h4>{{model.date}}</h4>
 <p>{{model.text}}</p>
 {{edit-post currentPost=model edit="editPost"}}
+{{new-comment currentPost=model sendComment="addComment"}}

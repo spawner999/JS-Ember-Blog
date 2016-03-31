@@ -13,7 +13,8 @@ export default Ember.Component.extend({
         title: this.get('title'),
         user: this.get('user'),
         text: this.get('text'),
-        date: new Date()
+        date: new Date(),
+        image: 'http://lorempixel.com/400/400/sports/1/'
       };
       this.set('user', '');
       this.set('title', '');
