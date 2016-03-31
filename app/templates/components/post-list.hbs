@@ -1,3 +1,8 @@
 {{#each filteredList as |post|}}
   {{post-tile currentPost=post sendUpdate="sendUpdate" sendDelete="sendDelete"}}
 {{/each}}
+{{#if isSelected}}
+  <button type="button" {{action 'incrementFilter'}}>Show More</button>
+{{else}}
+  <button type="button" {{action 'decrementFilter'}}>Show Less</button>
+{{/if}}

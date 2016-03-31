@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     },
     create(){
       this.set('showForm', false);
-      console.log(this.get('title'));
+      console.log(this.get('callback'));
       var params = {
         title: this.get('title'),
         user: this.get('user'),
