@@ -3,5 +3,6 @@
   <h2>{{currentPost.title}}</h2>
   {{/link-to}}
   <h5>By: {{currentPost.user}}</h5>
+  <h5>{{currentPost.date}}</h5>
   <button type="button" {{action 'delete' currentPost}}>Delete</button>
 </div>

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
   showForm: false,
@@ -8,12 +9,11 @@ export default Ember.Component.extend({
     },
     create(){
       this.set('showForm', false);
-      console.log(this.get('callback'));
       var params = {
         title: this.get('title'),
         user: this.get('user'),
         text: this.get('text'),
-        date: new Date(),
+        date: moment().format('LLL'),
         image: 'http://lorempixel.com/400/400/sports/1/'
       };
       this.set('user', '');

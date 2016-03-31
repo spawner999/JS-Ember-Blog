@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
   showForm: false,
@@ -11,9 +12,11 @@ export default Ember.Component.extend({
         user: this.get('user'),
         message: this.get('message'),
         post: this.get('currentPost'),
-        date: new Date()
-      }
+        date: moment().format('LLLL')
+      };
       this.set('showForm', false);
+      this.set('user', '');
+      this.set('message', '');
       this.sendAction('sendComment', params);
     }
   }
