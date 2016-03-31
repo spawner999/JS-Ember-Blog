@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  sortedlist: Ember.computed.sort('postList','sorting'),
+  filteredList: Ember.computed.filter('postList', function(post, index, array){
+    return index < 3;
+  }),
+  sortedlist: Ember.computed.sort('filteredList','sorting'),
   sorting: ['date:desc'],
   actions: {
     sendUpdate(currentPost, params){
