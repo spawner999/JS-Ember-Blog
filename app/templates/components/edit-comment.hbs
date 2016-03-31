@@ -1,0 +1,9 @@
+{{#if showForm}}
+  <form>
+    <label for="text">Message</label>
+    {{textarea value=currentComment.message}}
+  </form>
+  <button type="button" {{action 'editComment' currentPost}}>Submit!</button>
+{{else}}
+  <button type="button" {{action 'toggleForm'}}>Edit Comment!</button>
+{{/if}}

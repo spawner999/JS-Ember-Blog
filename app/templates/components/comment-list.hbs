@@ -1,0 +1,4 @@
+<h2>Comments: </h2>
+{{#each filteredList as |comment|}}
+  {{comment-tile currentComment=comment sendUpdate="sendUpdate" sendDelete="sendDelete"}}
+{{/each}}

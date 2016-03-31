@@ -22,6 +22,13 @@ export default Ember.Route.extend({
         return currentPost.save();
       });
       this.transitionTo('post');
-    }
+    },
+    editComment(currentPost, params){
+        if(params[message] !== undefined){
+          currentPost.set('message', params[message]);
+        }
+        currentPost.save();
+        this.transitionTo('post');
+      }
   }
 });
