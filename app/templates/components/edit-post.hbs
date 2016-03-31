@@ -1,11 +1,11 @@
 {{#if showForm}}
   <form>
     <label for="user">Your Name</label>
-    {{input type="text" value=user}}
+    {{input type="text" value= currentPost.user}}
     <label for="title">title</label>
-    {{input type="text" value=title}}
+    {{input type="text" value=currentPost.title}}
     <label for="text">Message</label>
-    {{textarea value=text}}
+    {{textarea value=currentPost.text}}
   </form>
   <button type="button" {{action 'edit' currentPost}}>Submit!</button>
 {{else}}

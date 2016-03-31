@@ -10,15 +10,6 @@ export default Ember.Route.extend({
       newPost.save();
       this.transitionTo('index');
     },
-    editPost(currentPost, params){
-      Object.keys(params).forEach(function (key) {
-        if(params[key] !== undefined) {
-          currentPost.set(key, params[key]);
-        }
-      });
-      currentPost.save();
-      this.transitionTo('index');
-    },
     deletePost(currentPost){
       console.log('hello');
       currentPost.destroyRecord();
