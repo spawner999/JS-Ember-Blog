@@ -4,5 +4,5 @@
 <h4>{{model.date}}</h4>
 <p>{{model.text}}</p>
 {{edit-post currentPost=model edit="editPost"}}
-{{comment-list filteredList=model.comments sendUpdate="editComment"}}
 {{new-comment currentPost=model sendComment="addComment"}}
+{{comment-list filteredList=model.comments sendUpdate="editComment" sendDelete="deleteComment"}}
