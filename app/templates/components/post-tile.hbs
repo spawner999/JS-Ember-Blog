@@ -1,7 +1,6 @@
 <div class="post">
   <h2>{{currentPost.title}}</h2>
   <h5>By: {{currentPost.user}}</h5>
-  <p>{{currentPost.text}}</p>
   {{edit-post currentPost=currentPost edit="sendUpdate"}}
   <button type="button" {{action 'delete' currentPost}}>Delete</button>
 </div>
